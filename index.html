@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nizan Makeovers | Power BI Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f5f7fa, #e6ecf5);
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+      animation: fadeInDown 1s ease;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #2b2d42;
+      font-weight: 700;
+    }
+
+    header p {
+      color: #6c757d;
+      margin-top: 5px;
+      font-size: 1rem;
+    }
+
+    /* Navigation Buttons */
+    .nav-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .nav-buttons button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(135deg, #5f2eea, #00c6ff);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .nav-buttons button.active {
+      background: linear-gradient(135deg, #ff7e5f, #feb47b);
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+
+    .nav-buttons button:hover {
+      opacity: 0.9;
+    }
+
+    /* Dashboard Section Styles */
+    .dashboard-section {
+      width: 95%;
+      max-width: 1200px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: none;
+      animation: fadeIn 0.8s ease;
+    }
+
+    .dashboard-section.active {
+      display: block;
+    }
+
+    .section-header {
+      background: linear-gradient(135deg, #5f2eea, #00c6ff);
+      padding: 20px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .section-header h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    .dashboard-frame {
+      padding: 20px;
+      background-color: #f9fafc;
+    }
+
+    .dashboard-frame iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .section-header h2 {
+        font-size: 1.4rem;
+      }
+      .dashboard-frame iframe {
+        height: 450px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Nizan Makeovers</h1>
+    <p>Review Meeting — Dashboard</p>
+  </header>
+
+  <!-- 🔹 Navigation Buttons -->
+  <div class="nav-buttons">
+    <button id="salesBtn" class="active">Sales & Leads</button>
+    <button id="staffBtn">Staff Performance</button>
+  </div>
+
+  <!-- 🔹 Sales & Leads Section -->
+  <div id="salesSection" class="dashboard-section active">
+    <div class="section-header" style="background: linear-gradient(135deg, #ff7e5f, #feb47b);">
+      <h2>Sales & Leads Dashboard</h2>
+    </div>
+    <div class="dashboard-frame">
+      <!-- 👉 Paste your Sales & Leads Power BI iframe here -->
+    <iframe title="Nizan Dashbord" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=55acf333-4a7d-4bc5-9032-53f0ffe62b9e&autoAuth=true&ctid=f5013204-8477-493f-9686-390532a27601" frameborder="0" allowFullScreen="true"></iframe>
+    </div>
+  </div>
+
+  <!-- 🔹 Staff Performance Section -->
+  <div id="staffSection" class="dashboard-section">
+    <div class="section-header" style="background: linear-gradient(135deg, #5f2eea, #00c6ff);">
+      <h2>Staff Performance Dashboard</h2>
+    </div>
+    <div class="dashboard-frame">
+      <!-- 👉 Paste your Staff Performance Power BI iframe here -->
+      <iframe src="" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Nizan Makeovers | Dashboard Review Meeting
+  </footer>
+
+  <!-- 🔸 JavaScript for Section Switching -->
+  <script>
+    const salesBtn = document.getElementById('salesBtn');
+    const staffBtn = document.getElementById('staffBtn');
+    const salesSection = document.getElementById('salesSection');
+    const staffSection = document.getElementById('staffSection');
+
+    salesBtn.addEventListener('click', () => {
+      salesBtn.classList.add('active');
+      staffBtn.classList.remove('active');
+      salesSection.classList.add('active');
+      staffSection.classList.remove('active');
+    });
+
+    staffBtn.addEventListener('click', () => {
+      staffBtn.classList.add('active');
+      salesBtn.classList.remove('active');
+      staffSection.classList.add('active');
+      salesSection.classList.remove('active');
+    });
+  </script>
+
+</body>
+</html>

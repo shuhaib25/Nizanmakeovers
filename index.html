@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nizan Makeovers | Power BI Dashboard</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -69,11 +70,6 @@
       box-shadow: 0 5px 15px rgba(0,0,0,0.15);
     }
 
-    .nav-buttons button:hover {
-      opacity: 0.9;
-    }
-
-    /* Dashboard Section Styles */
     .dashboard-section {
       width: 95%;
       max-width: 1200px;
@@ -90,7 +86,6 @@
     }
 
     .section-header {
-      background: linear-gradient(135deg, #5f2eea, #00c6ff);
       padding: 20px;
       color: #fff;
       text-align: center;
@@ -121,7 +116,6 @@
       font-size: 0.9rem;
     }
 
-    /* Animations */
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -133,12 +127,6 @@
     }
 
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      .section-header h2 {
-        font-size: 1.4rem;
-      }
       .dashboard-frame iframe {
         height: 450px;
       }
@@ -148,65 +136,79 @@
 
 <body>
 
-  <header>
-    <h1>Nizan Makeovers</h1>
-    <p>Review Meeting — Dashboard</p>
-  </header>
+<header>
+  <h1>Nizan Makeovers</h1>
+  <p>Review Meeting — Dashboard</p>
+</header>
 
-  <!-- 🔹 Navigation Buttons -->
-  <div class="nav-buttons">
-    <button id="salesBtn" class="active">Sales & Leads</button>
-    <button id="staffBtn">Staff Performance</button>
+<!-- 🔹 Navigation Buttons -->
+<div class="nav-buttons">
+  <button id="salesBtn" class="active">Sales & Leads</button>
+  <button id="staffBtn">Staff Performance</button>
+  <button id="regionBtn">Region-wise Service Count</button>
+</div>
+
+<!-- 🔹 Sales & Leads -->
+<div id="salesSection" class="dashboard-section active">
+  <div class="section-header" style="background: linear-gradient(135deg, #56e07d, #a3ddb3);">
+    <h2>Sales & Leads Dashboard</h2>
   </div>
-
-  <!-- 🔹 Sales & Leads Section -->
-  <div id="salesSection" class="dashboard-section active">
-    <div class="section-header" style="background: linear-gradient(135deg, #56e07d, #a3ddb3 );">
-      <h2>Sales & Leads Dashboard</h2>
-    </div>
-    <div class="dashboard-frame">
-      <!-- 👉 Paste your Sales & Leads Power BI iframe here -->
-    <iframe title="Nizan Dashbord" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=55acf333-4a7d-4bc5-9032-53f0ffe62b9e&autoAuth=true&ctid=f5013204-8477-493f-9686-390532a27601" frameborder="0" allowFullScreen="true"></iframe>
-      <!-- <iframe title="New Nizan office data" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=22a9e16c-4d9c-48f2-9154-895e5fec75b7&autoAuth=true&ctid=f5013204-8477-493f-9686-390532a27601" frameborder="0" allowFullScreen="true"></iframe> -->
-    </div>
+  <div class="dashboard-frame">
+    <!-- Your iframe already added -->
+    <iframe src="https://app.powerbi.com/reportEmbed?reportId=55acf333-4a7d-4bc5-9032-53f0ffe62b9e&autoAuth=true&ctid=f5013204-8477-493f-9686-390532a27601"
+      allowfullscreen="true"></iframe>
   </div>
+</div>
 
-  <!-- 🔹 Staff Performance Section -->
-  <div id="staffSection" class="dashboard-section">
-    <div class="section-header" style="background: linear-gradient(135deg, #5f2eea, #00c6ff);">
-      <h2>Staff Performance Dashboard</h2>
-    </div>
-    <div class="dashboard-frame">
-      <!-- 👉 Paste your Staff Performance Power BI iframe here -->
-<!-- <iframe title="Eizan Employee Data" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=3875a7e4-d3c8-44df-99fc-c504fd730df2&autoAuth=true&ctid=f5013204-8477-493f-9686-390532a27601" frameborder="0" allowFullScreen="true"></iframe>     -->
-<iframe title="New Nizan office data" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=22a9e16c-4d9c-48f2-9154-895e5fec75b7&autoAuth=true&ctid=f5013204-8477-493f-9686-390532a27601" frameborder="0" allowFullScreen="true"></iframe>  </div>
+<!-- 🔹 Staff Performance -->
+<div id="staffSection" class="dashboard-section">
+  <div class="section-header" style="background: linear-gradient(135deg, #5f2eea, #00c6ff);">
+    <h2>Staff Performance Dashboard</h2>
   </div>
+  <div class="dashboard-frame">
+    <iframe src="https://app.powerbi.com/reportEmbed?reportId=22a9e16c-4d9c-48f2-9154-895e5fec75b7&autoAuth=true&ctid=f5013204-8477-493f-9686-390532a27601"
+      allowfullscreen="true"></iframe>
+  </div>
+</div>
 
-  <footer>
-    © 2025 Nizan Makeovers | Dashboard Review Meeting
-  </footer>
+<!-- 🔹 Region-wise Service Count -->
+<div id="regionSection" class="dashboard-section">
+  <div class="section-header" style="background: linear-gradient(135deg, #ff9f43, #ff6f61);">
+    <h2>Region-wise Service Count Dashboard</h2>
+  </div>
+  <div class="dashboard-frame">
+    <iframe title="regionvise_count" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=a74e1e3d-c0aa-479f-88c0-9e1579170634&autoAuth=true&ctid=f5013204-8477-493f-9686-390532a27601" frameborder="0" allowFullScreen="true"></iframe>
+  </div>
+</div>
 
-  <!-- 🔸 JavaScript for Section Switching -->
-  <script>
-    const salesBtn = document.getElementById('salesBtn');
-    const staffBtn = document.getElementById('staffBtn');
-    const salesSection = document.getElementById('salesSection');
-    const staffSection = document.getElementById('staffSection');
+<footer>
+  © 2025 Nizan Makeovers | Dashboard Review Meeting
+</footer>
 
-    salesBtn.addEventListener('click', () => {
-      salesBtn.classList.add('active');
-      staffBtn.classList.remove('active');
-      salesSection.classList.add('active');
-      staffSection.classList.remove('active');
+<!-- 🔸 JavaScript -->
+<script>
+  const buttons = {
+    salesBtn: 'salesSection',
+    staffBtn: 'staffSection',
+    regionBtn: 'regionSection'
+  };
+
+  Object.keys(buttons).forEach(btnId => {
+    document.getElementById(btnId).addEventListener('click', () => {
+
+      // Remove active from all buttons & sections
+      document.querySelectorAll('.nav-buttons button')
+        .forEach(btn => btn.classList.remove('active'));
+
+      document.querySelectorAll('.dashboard-section')
+        .forEach(section => section.classList.remove('active'));
+
+      // Activate clicked button & section
+      document.getElementById(btnId).classList.add('active');
+      document.getElementById(buttons[btnId]).classList.add('active');
     });
-
-    staffBtn.addEventListener('click', () => {
-      staffBtn.classList.add('active');
-      salesBtn.classList.remove('active');
-      staffSection.classList.add('active');
-      salesSection.classList.remove('active');
-    });
-  </script>
+  });
+</script>
 
 </body>
 </html>
